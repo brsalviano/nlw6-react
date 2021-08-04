@@ -15,12 +15,12 @@ export function Home() {
     const history = useHistory();
 
     function handleCreateRoom() {
+        //Fazendo o processo de login com o firebase e o provider do Google.
         const provider = new firebase.auth.GoogleAuthProvider();
-
         auth.signInWithPopup(provider).then(result => {
             console.log(result);
+            history.push('/rooms/new');
         })
-       // history.push('/rooms/new');
     }
 
     return (
